@@ -1,8 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@font-face {
+  font-family: 'StretchPro.ttf';
+  src: url('./AVOIDANCE/StretchPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-/* variables */
 :root {
-  /* Colors */
   --primary-color: #ffcd42;
   --secondary-color: #ffd35c;
   --bg-primary: #ffffff;
@@ -13,12 +16,10 @@
   --bg-secondary-two: #111111;
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 
-  /* Font Weight */
   --weight-small: 400;
   --weight-semibold: 600;
   --weight-bold: 800;
 
-  /* Max width */
   --width-small: 600px;
   --width-medium: 1100px;
   --width-large: 1300px;
@@ -29,16 +30,27 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Reset default styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body {
+  background: var(--bg-primary);
+  color: var(--text-color);
+  font-family: 'StretchPro.ttf', sans-serif;
+  line-height: 1.5;
+}
+
 ul {
   list-style: none;
 }
+
+h1, h2, h3, p, a, .project-bio h3 {
+  font-family: 'StretchPro.ttf', sans-serif;
+}
+
 h2 {
   font-size: 2rem;
   font-weight: var(--weight-bold);
@@ -50,22 +62,9 @@ a {
   color: var(--text-color);
 }
 
-/* Main styling */
-body {
-  background: var(--bg-primary);
-  color: var(--text-color);
-  font-family: "Raleway", sans-serif;
-  line-height: 1.5;
-}
-
-
 @keyframes bounce {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-10px);
-  }
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
 }
 
 .division {
@@ -75,7 +74,6 @@ body {
   margin: 0 0;
 }
 
-/* Projects */
 #projects {
   display: flex;
   flex-direction: column;
@@ -87,10 +85,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(512px, auto);
   grid-gap: 0.8rem;
-}
-
-.card .project-bio h3 {
-  font-size: 1.5rem;
 }
 
 .project-info {
@@ -108,19 +102,14 @@ body {
   position: relative;
 }
 
-/* Responsiveness */
-
 @media (max-width: 1000px) {
   .project {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
   .project {
-    display: grid;
     grid-template-columns: 1fr;
   }
-
 }
